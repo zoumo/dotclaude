@@ -1,0 +1,9 @@
+{
+  "name": "chinese-style-guide",
+  "description": "Use when outputting Chinese content, including markdown documents, technical writing, messages, or any text that contains Chinese characters. Provides guidelines for spacing, punctuation, and formatting in Chinese.",
+  "version": "1.0.0",
+  "author": {
+    "name": "zoumo",
+    "email": "jim.zoumo@gmail.com"
+  }
+}

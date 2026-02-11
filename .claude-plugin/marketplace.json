@@ -1,0 +1,26 @@
+{
+  "name": "zoumo-dotclaude",
+  "owner": {
+    "name": "zoumo",
+    "email": "jim.zoumo@gmail.com"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugins marketplace",
+    "pluginRoot": "./plugins"
+  },
+  "repository": "https://github.com/zoumo/dotclaude",
+  "plugins": [
+    {
+      "name": "chinese-style-guide",
+      "source": "./chinese-style-guide",
+      "description": "Chinese style guide for consistent formatting and spacing",
+      "version": "1.0.0",
+      "author": {
+        "name": "zoumo",
+        "email": "jim.zoumo@gmail.com"
+      },
+      "category": "style-guide",
+      "keywords": ["chinese", "style", "formatting", "spacing"]
+    }
+  ]
+}
