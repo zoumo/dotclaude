@@ -1,16 +1,65 @@
-# CLAUDE.md
+---
+title: Plugin & Skill Specification Reference Documentation
+type: docs
+date: 2026-02-13
+updated: 2026-02-13
+---
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# Plugin & Skill Specification Reference Documentation
 
-## Project Overview
+## Overview
 
-This is a Claude Code plugin marketplace repository hosted at `github.com/zoumo/dotclaude`. The marketplace contains plugins that extend Claude Code's capabilities:
+重构 CLAUDE.md，将当前的 Plugin Structure 章节拆分为多个详细章节，分别说明 Plugin、Skill、Agent 的完整结构和规范。
 
-- **chinese-style-guide**: Chinese text formatting and spacing guidelines
-- **go-style-guide**: Go coding standards, best practices, and testing patterns with automated code review agent
+## Problem Statement
 
+当前 CLAUDE.md 的 Plugin Structure 章节过于简略：
+1. 仅展示目录结构，缺少字段说明
+2. Skill 和 Agent 混在一起说明
+3. 缺少官方规范的链接和关键约束
+
+## Proposed Solution
+
+将内容重构为以下章节：
+
+```
 ## Plugin Development Reference
 
+### Plugin Specification
+- 目录结构
+- plugin.json 字段说明（表格）
+- 规范链接
+
+### Skill Specification
+- 目录结构
+- SKILL.md frontmatter 字段说明
+- 内容组织建议
+- 规范链接
+
+### Agent Specification
+- 目录结构
+- AGENT.md frontmatter 字段说明
+- 内容组织建议
+
+### Marketplace Configuration
+- marketplace.json 结构说明
+
+### Repository Conventions
+- 描述模式（trigger-based）
+- Good/Avoid 表格格式
+```
+
+## Technical Approach
+
+### File to Modify
+
+`CLAUDE.md` - 重构 lines 12-67 (Plugin Structure 章节)
+
+### Content Structure
+
+#### 1. Plugin Specification Section
+
+```markdown
 ### Plugin Specification
 
 > Source: [Claude Code Plugins Reference](https://code.claude.com/docs/en/plugins-reference)
@@ -52,9 +101,11 @@ plugins/
 | `skills` | string\|array | Skill directory paths |
 | `agents` | string\|array | Agent file paths |
 | `hooks` | string\|array\|object | Hook configuration |
+```
 
----
+#### 2. Skill Specification Section
 
+```markdown
 ### Skill Specification
 
 > Source: [Agent Skills Specification](https://agentskills.io/specification)
@@ -99,9 +150,11 @@ Recommended section order:
 5. **References** - External documentation
 
 **Progressive Disclosure:** Keep SKILL.md under 500 lines. Move detailed content to `references/`.
+```
 
----
+#### 3. Agent Specification Section
 
+```markdown
 ### Agent Specification
 
 #### Directory Structure
@@ -131,41 +184,11 @@ Recommended section order:
 4. **Checklist** - Review items (checkbox format)
 5. **Review Process** - Step-by-step process
 6. **References** - External links
-
----
-
-### Marketplace Configuration
-
-The top-level `.claude-plugin/marketplace.json` defines the marketplace:
-
-```json
-{
-  "name": "zoumo-dotclaude",
-  "metadata": { "pluginRoot": "./plugins" },
-  "repository": "https://github.com/zoumo/dotclaude",
-  "plugins": [...]
-}
 ```
 
-### Plugin Installation (Marketplace)
+#### 4. Repository Conventions Section
 
-Plugins are installed via Claude Marketplace, not manual placement:
-
-```bash
-/plugin marketplace add zoumo/dotclaude
-/plugin install <plugin-name>@zoumo-dotclaude
-```
-
-### Skill Invocation
-
-Skills are invoked by name directly—no plugin prefix needed:
-
-```
-/<skill-name>
-```
-
----
-
+```markdown
 ### Repository Conventions
 
 #### Description Pattern
@@ -184,7 +207,18 @@ Use **trigger-based** descriptions - explain *when* to use:
 |------|------|-------|
 | Package name | `package bytes` | `package byte_utils` |
 ```
+```
 
-### Git Workflow
+## Acceptance Criteria
 
-- Commit messages follow convention: `docs:`, `feat:`, `fix:`, `refactor:`, `test:`, `chore:`
+- [x] Plugin Specification 章节包含目录结构和字段表格
+- [x] Skill Specification 章节包含 frontmatter 约束和内容组织建议
+- [x] Agent Specification 章节包含结构和内容建议
+- [x] Marketplace Configuration 保持独立章节
+- [x] Repository Conventions 包含描述模式和表格格式
+- [x] 所有规范包含官方来源链接
+
+## References
+
+- [Claude Code Plugins Reference](https://code.claude.com/docs/en/plugins-reference)
+- [Agent Skills Specification](https://agentskills.io/specification)
