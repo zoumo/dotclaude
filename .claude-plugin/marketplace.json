@@ -21,6 +21,18 @@
       },
       "category": "style-guide",
       "keywords": ["chinese", "style", "formatting", "spacing"]
+    },
+    {
+      "name": "go-style-guide",
+      "source": "./go-style-guide",
+      "description": "Go style guide with coding standards, best practices and testing patterns",
+      "version": "1.0.0",
+      "author": {
+        "name": "zoumo",
+        "email": "jim.zoumo@gmail.com"
+      },
+      "category": "language-guide",
+      "keywords": ["go", "golang", "style", "code-review", "testing"]
     }
   ]
 }

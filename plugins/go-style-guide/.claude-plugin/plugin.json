@@ -1,0 +1,9 @@
+{
+  "name": "go-style-guide",
+  "description": "Use when writing, refactoring, or reviewing Go code. Provides idiomatic Go coding standards based on Google's style guide, including naming conventions, error handling, testing patterns, and best practices.",
+  "version": "1.0.0",
+  "author": {
+    "name": "zoumo",
+    "email": "jim.zoumo@gmail.com"
+  }
+}

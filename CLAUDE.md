@@ -4,7 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Claude Code plugin marketplace repository hosted at `github.com/zoumo/dotclaude`. The marketplace contains plugins that extend Claude Code's capabilities, primarily the `chinese-style-guide` plugin for Chinese text formatting.
+This is a Claude Code plugin marketplace repository hosted at `github.com/zoumo/dotclaude`. The marketplace contains plugins that extend Claude Code's capabilities:
+
+- **chinese-style-guide**: Chinese text formatting and spacing guidelines
+- **go-style-guide**: Go coding standards, best practices, and testing patterns with automated code review agent
 
 ## Plugin Structure
 
@@ -14,9 +17,12 @@ plugins/
 │   ├── .claude-plugin/
 │   │   └── plugin.json           # Plugin metadata (name, description, version, author)
 │   ├── README.md                  # Plugin documentation with installation/usage instructions
-│   └── skills/
-│       └── <skill-name>/
-│           └── SKILL.md           # Skill definition with YAML frontmatter
+│   ├── skills/                    # Skills directory
+│   │   └── <skill-name>/
+│   │       └── SKILL.md           # Skill definition with YAML frontmatter
+│   └── agents/                    # Agents directory (optional)
+│       └── <agent-name>/
+│           └── AGENT.md           # Agent definition
 ```
 
 ### Marketplace Configuration
@@ -70,6 +76,4 @@ When writing or modifying plugins:
 
 ### Git Workflow
 
-- When creating a new plan, use `planning-with-files:plan` skill
-- Store planning files in `./docs/plans/<plan-name>/`
 - Commit messages follow convention: `docs:`, `feat:`, `fix:`, `refactor:`, `test:`, `chore:`
