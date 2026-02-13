@@ -1,6 +1,6 @@
 # Claude Code Plugin Marketplace
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 A collection of plugins for [Claude Code](https://claude.ai/code) that extend its capabilities with style guides, coding standards, and best practices.
 
@@ -73,4 +73,4 @@ See [CLAUDE.md](./CLAUDE.md) for development guidelines and conventions.
 
 ## License
 
-[MIT](LICENSE)
+[Apache 2.0](LICENSE)
