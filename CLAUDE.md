@@ -70,6 +70,4 @@ When writing or modifying plugins:
 
 ### Git Workflow
 
-- When creating a new plan, use `planning-with-files:plan` skill
-- Store planning files in `./docs/plans/<plan-name>/`
 - Commit messages follow convention: `docs:`, `feat:`, `fix:`, `refactor:`, `test:`, `chore:`
