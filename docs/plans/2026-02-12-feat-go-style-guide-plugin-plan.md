@@ -427,7 +427,7 @@ Sections to include:
     count := len(items)
     // Avoid when variable already exists
     if name, err := getName(); err != nil {
-        return err  // name shadowed on作用域
+        return err  // name shadowed in this scope
     }
     ```
   - if err := fn(); err != nil pattern

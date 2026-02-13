@@ -1,6 +1,6 @@
 ---
 name: golang-principle
-description: Use when writing, refactoring, or reviewing Go code. Ensures idiomatic Go coding standards including naming conventions, error handling, API design, and code organization.
+description: Use when writing, refactoring, or reviewing Go production code (non-test files). Ensures idiomatic Go coding standards including naming conventions, error handling, API design, and code organization.
 ---
 
 # Go Coding Principles
@@ -33,6 +33,7 @@ Apply these guidelines when:
 | Context first | `func Fetch(ctx, id)` | `func Fetch(id, ctx)` |
 | Null slice | `var items []Item` | `items := []Item{}` for local |
 | nil check | `if s != nil` | `if len(s) > 0` for nil check |
+| Input validation | `if input.Name == "" { return err }` | Processing without validation |
 
 ## Naming Conventions
 
@@ -234,6 +235,31 @@ return fmt.Errorf("user not found")
 
 Internal errors may include details for debugging; external errors should be generic to prevent information disclosure.
 
+### Input Validation
+
+Validate user inputs before processing. Use struct tags with validators or manual checks:
+
+```go
+// Good - validate input before processing
+func ProcessUser(ctx context.Context, input *UserInput) error {
+    if input.Name == "" {
+        return fmt.Errorf("name is required")
+    }
+    if input.Age < 0 || input.Age > 150 {
+        return fmt.Errorf("age must be between 0 and 150")
+    }
+    // ... process validated input
+    return nil
+}
+
+// Good - using struct validation (e.g., go-playground/validator)
+type UserInput struct {
+    Name  string `validate:"required,min=1,max=100"`
+    Email string `validate:"required,email"`
+    Age   int    `validate:"min=0,max=150"`
+}
+```
+
 ## API Design
 
 ### Context as First Parameter
@@ -324,7 +350,7 @@ Keep functions small and focused, with single responsibilities.
 
 ## Common Idioms
 
-### short Variable Declaration
+### Short Variable Declaration
 
 Use `:=` for assignment where possible:
 

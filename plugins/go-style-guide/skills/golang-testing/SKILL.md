@@ -1,6 +1,6 @@
 ---
 name: golang-testing
-description: Use when writing or reviewing Go tests. Covers table-driven tests, testify usage, test helpers, and proper test organization.
+description: Use when writing or reviewing Go test files (*_test.go). Covers table-driven tests, testify usage, test helpers, and proper test organization.
 ---
 
 # Go Testing Patterns

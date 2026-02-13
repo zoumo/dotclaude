@@ -6,9 +6,22 @@ A comprehensive Go style guide plugin that codifies the [Google Go Style Guide](
 
 Install via Claude Marketplace:
 
+### 1. Add Marketplace
+
 ```bash
 /plugin marketplace add zoumo/dotclaude
-/plugin install go-style-guide
+```
+
+Or use the full URL:
+
+```bash
+/plugin marketplace add https://github.com/zoumo/dotclaude
+```
+
+### 2. Install Plugin
+
+```bash
+/plugin install go-style-guide@zoumo-dotclaude
 ```
 
 ## Skills
@@ -53,48 +66,25 @@ Checklist covers:
 - Style principles (clarity, simplicity, concision, maintainability, consistency)
 - Naming conventions (no underscores, no "Get" prefix, -er interfaces)
 - Error handling (error checks, wrapping, proper messages)
+- Security checks (no hardcoded secrets, SQL parameterization, input validation)
 - Formatting (gofmt compliance, import grouping)
 - API design (context first, interface acceptance)
 - Testing patterns (table-driven tests, testify usage)
-
-## Quick Reference
-
-| Rule | Good | Avoid |
-|------|------|-------|
-| Package name | `package bytes` | `package byte_utils` |
-| Getter no "Get" | `obj.Owner()` | `obj.GetOwner()` |
-| Error wrapping | `fmt.Errorf("context: %w", err)` | `fmt.Errorf("context: %v", err)` |
-| Test naming | `TestCalculateSum_ValidInput` | `testSum_valid` |
-| Assert order | `assert.Equal(t, want, got)` | `assert.Equal(t, got, want)` |
-
-## Key Principles
-
-### Naming
-
-- Package names: lowercase, single-word, no underscores
-- MixedCaps for exported, mixedCaps for unexported
-- Single-method interfaces: -er suffix
-- Receiver names: short abbreviations, consistent
-
-### Error Handling
-
-- Always check errors, never ignore with `_`
-- Error strings: no capitalization, no punctuation
-- Use `%w` for wrapping to preserve error chains
-- Don't panic for normal errors
-
-### Testing
-
-- Use table-driven tests for similar inputs
-- Use testify/assert with `assert.Equal(t, want, got)`
-- Call `t.Helper()` in test helpers
-- Test both success and error paths
 
 ## References
 
 - [Google Go Style Guide](https://google.github.io/styleguide/go/)
 - [Effective Go](https://go.dev/doc/effective_go)
 - [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)
+
+## Changelog
+
+### v1.0.0 (2026-02-13)
+
+- Initial release
+- Added `golang-principle` skill for Go coding standards
+- Added `golang-testing` skill for testing patterns
+- Added `go-reviewer` agent for code review
 
 ## License
 

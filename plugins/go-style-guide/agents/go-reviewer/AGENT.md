@@ -25,6 +25,12 @@ The go-reviewer agent should be invoked when:
 - Go code refactoring is proposed
 - Testing patterns need verification
 
+## Dependencies
+
+This agent references the following skills for detailed guidance:
+- `golang-principle`: Go coding standards and best practices
+- `golang-testing`: Go testing patterns and conventions
+
 ## Review Checklist
 
 ### Style Principles
@@ -61,6 +67,13 @@ The go-reviewer agent should be invoked when:
 - [ ] Accept interfaces, return concrete types where appropriate
 - [ ] Package names are descriptive (not `util`, `helper`, `common`)
 - [ ] Exported APIs have proper godoc comments
+
+### Security Checks
+- [ ] No hardcoded secrets (API keys, passwords, tokens)
+- [ ] SQL queries use parameterization (no string concatenation)
+- [ ] User inputs are validated and sanitized
+- [ ] Sensitive data is not logged or exposed in errors
+- [ ] Authentication/authorization checks are present where needed
 
 ### Testing Patterns
 - [ ] Table-driven tests used for similar inputs
