@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "chinese-style-guide",
-      "source": "./chinese-style-guide",
+      "source": "chinese-style-guide",
       "description": "Chinese style guide for consistent formatting and spacing",
       "version": "1.0.0",
       "author": {
@@ -24,7 +24,7 @@
     },
     {
       "name": "go-style-guide",
-      "source": "./go-style-guide",
+      "source": "go-style-guide",
       "description": "Go style guide with coding standards, best practices and testing patterns",
       "version": "1.0.0",
       "author": {
