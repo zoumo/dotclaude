@@ -141,11 +141,21 @@ The top-level `.claude-plugin/marketplace.json` defines the marketplace:
 ```json
 {
   "name": "zoumo-dotclaude",
-  "metadata": { "pluginRoot": "./plugins" },
+  "metadata": {
+    "description": "Personal Claude Code plugins marketplace"
+  },
   "repository": "https://github.com/zoumo/dotclaude",
-  "plugins": [...]
+  "plugins": [
+    {
+      "name": "plugin-name",
+      "source": "./plugins/plugin-name",
+      ...
+    }
+  ]
 }
 ```
+
+**Important:** The `source` field must be a relative path starting with `./` from the repository root to the plugin directory. Do NOT use `pluginRoot` in metadata - it is not supported and will cause validation errors. Always use relative paths like `./plugins/plugin-name`.
 
 ### Plugin Installation (Marketplace)
 
